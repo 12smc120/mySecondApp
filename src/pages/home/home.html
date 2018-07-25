@@ -8,11 +8,69 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Suman's Menu Starter</h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    If you get lost, the
+    <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
-
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
+
+<!-- <ion-footer>
+ <ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="selectedSection" color="light" (click)="openPage(selectedSection)">
+      <ion-segment-button value="tabButtonOne">
+        Home
+      </ion-segment-button>
+      <ion-segment-button value="ListPage">
+        List
+      </ion-segment-button>
+      <ion-segment-button value="MyactionsheetPage">
+        Sheet
+      </ion-segment-button>
+      <ion-segment-button value="tabButtonFour">
+        Alerts
+      </ion-segment-button>
+      <ion-segment-button value="tabButtonFive">
+        Badges
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>  -->
+
+<!-- <ion-footer>
+  <ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="selectedSection" color="light">
+      <ion-segment-button *ngFor="let p of pages"  (click)="openPage(p)">
+        {{p.title}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer> -->
+
+
+
+
+<!-- <ion-footer>
+  <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
+  </button>
+</ion-footer> -->
+
+<!-- <ion-footer>
+    <ion-toolbar>
+    <ion-title>Footer</ion-title>
+    <ion-icon ios="ios-home" md="md-home"></ion-icon>
+    
+    Advanced: explicity set the icon for each platform
+    <ion-icon ios="logo-angular" md="logo-angular"></ion-icon>
+     <ion-icon 
+      ios="logo-apple" 
+      md="logo-android" 
+      isActive="true"
+      name="Android">
+    </ion-icon> 
+    Footer
+    </ion-toolbar>
+  </ion-footer> -->

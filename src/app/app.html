@@ -8,12 +8,46 @@
   <ion-content>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+        <ion-icon [name]="p.icon" item-start></ion-icon> {{p.title}}
+        <ion-icon [name]="p.arrow" item-end></ion-icon>
       </button>
     </ion-list>
   </ion-content>
 
 </ion-menu>
+
+<!-- <ion-footer>
+  <ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="selectedSection" color="light">
+      <ion-segment-button *ngFor="let p of pages" (click)="openPage(p)"> 
+        <ion-icon [name]="p.icon" item-start iconTitle="Water"></ion-icon><br>
+        {{p.title}} 
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>  -->
+<!--*ngIf="selectedSection != 'poc'"-->
+<ion-footer *ngIf="selectedSection != 'PocPage'">
+  <ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="selectedSection" color="light" (click)="openPage2(selectedSection)">
+      <ion-segment-button value="HomePage">
+        <label>Home</label>
+      </ion-segment-button>
+      <ion-segment-button value="ListPage">
+        List
+      </ion-segment-button>
+      <ion-segment-button value="Sheet">
+        Sheet
+      </ion-segment-button>
+      <ion-segment-button value="AlertsPage">
+        Alerts
+      </ion-segment-button>
+      <ion-segment-button value="BadgesPage">
+        Budges
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer><!--Footer End-->
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
